@@ -4,7 +4,6 @@
 #include <stddef.h>
 
 typedef enum { RBTREE_RED, RBTREE_BLACK } color_t;
-typedef enum { ROTATE_RIGHT, ROTATE_LEFT } rotate_dir_t;
 
 typedef int key_t;
 
@@ -23,12 +22,6 @@ rbtree *new_rbtree(void);
 void delete_rbtree(rbtree *);
 
 node_t *rbtree_insert(rbtree *, const key_t);
-void *bst_insert(rbtree *, node_t *);
-void *rbtree_insert_fixup(rbtree *, node_t *);
-void *rbtree_rotate(rbtree *, node_t *, const rotate_dir_t);
-void rbtree_inorder(node_t *);
-
-
 node_t *rbtree_find(const rbtree *, const key_t);
 node_t *rbtree_min(const rbtree *);
 node_t *rbtree_max(const rbtree *);
